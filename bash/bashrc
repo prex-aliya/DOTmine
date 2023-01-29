@@ -1,0 +1,116 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+PS1='\[\e[0;2;97m\]\A \[\e[0;38;5;198m\][\[\e[0;97m\]\u\[\e[0;38;5;198m\]]\[\e[0;38;5;198m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2) \[\e[0m\]\W \[\e[0;2m\]>>> \[\e[0m\]'
+
+
+
+# keybindings {{{
+
+set -o vi   # set vi keybindings
+EDITOR=nvim # set default editor
+
+#alias torbrowser="cd /usr/share/torbrowser/ ; ./start-tor-browser.desktop & exit"
+
+gitcommit() {
+	git add .
+
+        if [ $# -eq 0 ]
+        then
+                git commit
+        else 
+                git commit -m "$1"
+        fi
+}
+gitpush() {
+        # if ssh-agent is running
+        if ps -p $SSH_AGENT_PID > /dev/null
+        then
+                echo "ssh-agent is running"
+        else
+                eval `ssh-agent`
+                ssh-add $HOME/.ssh/id_github_ed25519
+        fi
+
+	proxychains git push
+}
+
+
+countdown() {
+    start="$(( $(date '+%s') + $1))"
+    while [ $start -ge $(date +%s) ]; do
+        time="$(( $start - $(date +%s) ))"
+        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
+        sleep 1
+    done
+}
+stopwatch() {
+    start=$(date +%s)
+    while true; do
+        time="$(( $(date +%s) - $start))"
+        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
+        sleep 1
+    done
+}
+
+# }}}
+# History {{{
+
+# don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoredups:ignorespace
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=128
+HISTFILESIZE=0
+
+# }}}
+# Misc {{{
+XDG_DESKTOP_DIR="$HOME/dl"
+XDG_DOCUMENTS_DIR="$HOME/dox"
+
+XDG_MUSIC_DIR="$HOME/mdi/music"
+XDG_PICTURES_DIR="$HOME/mdi/pic"
+XDG_VIDEOS_DIR="$HOME/mdi/media"
+
+XDG_DOWNLOAD_DIR="$HOME/dl"
+XDG_PUBLICSHARE_DIR="$HOME/dl/"
+XDG_TEMPLATES_DIR="$HOME/dl/"
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+# }}}
+# cleaning {{{
+
+export RUSTUP_HOME="$HOME"/.config/rustup
+#export CARGO_HOME="$HOME"/.config/cargo
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+export CONAN_USER_HOME="$XDG_CONFIG_HOME"
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
+
+
+alias pidgin='pidgin --config="$XDG_DATA_HOME"/purple'
+alias wget='wget --hsts-file="/dev/null"'
+alias irssi='irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi'
+
+#. "/home/yv/.config/cargo/env"
+. "$HOME/.cargo/env"
+# }}}
