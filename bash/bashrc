@@ -4,14 +4,14 @@
 PS1='\[\e[0;2;97m\]\A \[\e[0;38;5;198m\][\[\e[0;97m\]\u\[\e[0;38;5;198m\]]\[\e[0;38;5;198m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2) \[\e[0m\]\W \[\e[0;2m\]>>> \[\e[0m\]'
 
 
-
 # keybindings {{{
-
 set -o vi   # set vi keybindings
 EDITOR=nvim # set default editor
 
-#alias torbrowser="cd /usr/share/torbrowser/ ; ./start-tor-browser.desktop & exit"
+alias clear="clear"
 
+
+# functions {{{
 gitcommit() {
 	git add .
 
@@ -35,7 +35,6 @@ gitpush() {
 	proxychains git push
 }
 
-
 countdown() {
     start="$(( $(date '+%s') + $1))"
     while [ $start -ge $(date +%s) ]; do
@@ -52,7 +51,7 @@ stopwatch() {
         sleep 1
     done
 }
-
+# }}}
 # }}}
 # History {{{
 
