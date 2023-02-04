@@ -9,6 +9,6 @@ Color picker is a simple X color picker handled on the terminal
 
 Official 
 <pre>
-A small tool for X11 that writes the color value on
+A small tool for X11 that writes the color value on<br>
 your screen at the cursor position to stdout, in RGB.
 </pre>
