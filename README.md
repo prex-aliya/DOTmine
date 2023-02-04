@@ -7,3 +7,5 @@ This is a collection of my dot files for my system.
 
 A small tool for X11 that writes the color value on
 your screen at the cursor position to stdout, in RGB.
+
+I only edited the Makefile, to install.
