@@ -2,12 +2,12 @@
 	path = nvim.config
         url = https://github.com/prex-aliya/nvim.config
 
-[submodule "dmenu"]
+[submodule "DMENUmine"]
         path = dmenu
         url = https://github.com/prex-aliya/DMENUmine
-[submodule "dwm"]
+[submodule "DWMmine"]
         path = dwm
         url = https://github.com/prex-aliya/DWMmine
-[submodule "st"]
+[submodule "STmine"]
         path = st
         url = https://github.com/prex-aliya/STmine
