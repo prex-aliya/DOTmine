@@ -1,3 +1,13 @@
 [submodule "nvim.config"]
 	path = nvim.config
-	url = https://github.com/prex-aliya/nvim.config
+        url = https://github.com/prex-aliya/nvim.config
+
+[submodule "dmenu"]
+        path = dmenu
+        url = https://github.com/prex-aliya/DMENUmine
+[submodule "dwm"]
+        path = dwm
+        url = https://github.com/prex-aliya/DWMmine
+[submodule "st"]
+        path = st
+        url = https://github.com/prex-aliya/STmine
