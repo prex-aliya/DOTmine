@@ -8,6 +8,7 @@ This is a collection of my dot files for my system.
 Color picker is a simple X color picker handled on the terminal
 
 Official 
-```
-A small tool for X11 that writes the color value on your screen at the cursor position to stdout, in RGB.
-```
+<pre>
+A small tool for X11 that writes the color value on
+your screen at the cursor position to stdout, in RGB.
+</pre>
