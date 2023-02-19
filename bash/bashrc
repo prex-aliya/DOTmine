@@ -35,6 +35,11 @@ gitpush() {
 	proxychains git push
 }
 
+countup() {
+        time="$(( $(date '+%s') + (60*60*4)))"
+        echo $(date -u -d "@$time" +%H:%M:%S)
+        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
+}
 countdown() {
     start="$(( $(date '+%s') + $1))"
     while [ $start -ge $(date +%s) ]; do

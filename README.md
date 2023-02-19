@@ -12,3 +12,6 @@ A small tool for X11 that writes the color value on
 your screen at the cursor position to stdout, in RGB.
 
 I only edited the Makefile, to install.
+
+
+<h2 href="https://github.com/marty-oehme/bemoji" align="center">bemoji</h2>
