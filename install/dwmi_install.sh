@@ -21,8 +21,10 @@ status="DMENUmine"
 # Root Script
 if [ "$EUID" -ne 0 ]; then
     root=false
+    echo "running as if root"
 else
     root=true
+    echo "running with sudo"
 fi
 
 
