@@ -18,7 +18,13 @@ wm="DWMmine"
 term="STmine"
 status="DMENUmine"
 
-# Set 
+# Root Script
+if [ "$EUID" -ne 0 ]; then
+    root=false
+else
+    root=true
+fi
+
 
 mkdir -p "$xdg_data_home/suckless"
 cd "$xdg_data_home/suckless"
@@ -28,7 +34,11 @@ for end in $wm $term $status; do
     git clone "$app$end"
     cd "$end"
     make
-    sudo make clean install
+    if $root = true; then
+        make clean install
+    else
+        sudo make clean install
+    fi
     cd ..
 done
 
