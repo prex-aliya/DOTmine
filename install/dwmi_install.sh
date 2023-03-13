@@ -2,9 +2,6 @@
 # https://github.com/DabideBoi/dwm-installer
 # Thanks for the help! Check theme out!
 
-# Prompt for password at the start
-echo "Running as if Root"
-
 # Install dependencies
 # sudo dnf install git make gcc libXft-devel libX11-devel libXinerama-devel
 
@@ -21,11 +18,12 @@ status="DMENUmine"
 # Root Script
 if [ "$EUID" -ne 0 ]; then
     root=false
-    echo "running as if root"
+    echo "running with sudo"
 else
     root=true
-    echo "running with sudo"
+    echo "running as if root"
 fi
+
 
 
 mkdir -p "$xdg_data_home/suckless"
