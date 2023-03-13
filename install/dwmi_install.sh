@@ -1,6 +1,6 @@
+#!/bin/sh
 # https://github.com/DabideBoi/dwm-installer
 # Thanks for the help! Check theme out!
-#!/bin/sh
 
 # Prompt for password at the start
 echo "Running as if Root"
@@ -12,10 +12,11 @@ echo "Running as if Root"
 xdg_config_home=${XDG_CONFIG_HOME:-$HOME/.config}
 xdg_data_home=${XDG_DATA_HOME:-$HOME/.local/share}
 
-app="https://github.com/prex-aliya/DWMmine"
-wm=""
-term=""
-status=""
+# Set Variables
+app="https://github.com/prex-aliya/"
+wm="DWMmine"
+term="STmine"
+status="DMENUmine"
 
 # Set 
 
@@ -23,9 +24,9 @@ mkdir -p "$xdg_data_home/suckless"
 cd "$xdg_data_home/suckless"
 
 # Clone and install dwm, st, and dmenu
-for app in $wm $term $status; do
-    git clone "https://git.suckless.org/$app"
-    cd "$app"
+for end in $wm $term $status; do
+    git clone "$app$end"
+    cd "$end"
     make
     sudo make clean install
     cd ..
