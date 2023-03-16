@@ -47,7 +47,7 @@ echo "Creating DWM session"
 echo "[Desktop Entry]
 Encoding=UTF-8
 Name=DWM
-Exec=dwm-setup
+Exec=/usr/local/bin/dwm
 Icon=dwm
 Type=XSession" | sudo tee "/usr/share/xsessions/dwm.desktop"
 
