@@ -10,3 +10,6 @@
 [submodule "STmine"]
 	path = STmine
 	url = https://github.com/prex-aliya/STmine
+[submodule "shox"]
+	path = shox
+	url = https://github.com/liamg/shox

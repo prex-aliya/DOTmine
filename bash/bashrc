@@ -9,6 +9,7 @@ set -o vi   # set vi keybindings
 EDITOR=nvim # set default editor
 
 alias clear="clear"
+alias gitupdate="git submodule update --remote --merge"
 
 
 # functions {{{
