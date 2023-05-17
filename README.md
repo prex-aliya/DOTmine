@@ -14,9 +14,3 @@ I only edited the Makefile, to install.
 
 
 <h1 align="center"><a href="https://github.com/marty-oehme/bemoji">bemoji</a><br /></h1>
-
-
-<h1 align="center"><a href="https://github.com/liamg/shox">shox</a></h1>
-
-Shox is a status line for the terminal, I use it as a replacement for dwm
-statusline.
