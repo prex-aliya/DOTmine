@@ -9,8 +9,8 @@ set -o vi   # set vi keybindings
 EDITOR=nvim # set default editor
 
 alias clear="clear"
-alias gitupdate="git submodule update --remote --merge"
-
+alias colemak="setxkbmap -layout us -variant colemak"
+alias goodnight="sleep 100; xset dpms force suspend; slock"
 
 # functions {{{
 gitcommit() {
@@ -34,28 +34,6 @@ gitpush() {
         fi
 
 	proxychains git push
-}
-
-countup() {
-        time="$(( $(date '+%s') + (60*60*4)))"
-        echo $(date -u -d "@$time" +%H:%M:%S)
-        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
-}
-countdown() {
-    start="$(( $(date '+%s') + $1))"
-    while [ $start -ge $(date +%s) ]; do
-        time="$(( $start - $(date +%s) ))"
-        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
-        sleep 1
-    done
-}
-stopwatch() {
-    start=$(date +%s)
-    while true; do
-        time="$(( $(date +%s) - $start))"
-        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
-        sleep 1
-    done
 }
 # }}}
 # }}}
@@ -100,7 +78,7 @@ fi
 # }}}
 # cleaning {{{
 
-export RUSTUP_HOME="$HOME"/.config/rustup
+#export RUSTUP_HOME="$HOME"/.config/rustup
 #export CARGO_HOME="$HOME"/.config/cargo
 export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle
 export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle
@@ -117,5 +95,5 @@ alias wget='wget --hsts-file="/dev/null"'
 alias irssi='irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi'
 
 #. "/home/yv/.config/cargo/env"
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
 # }}}
