@@ -1,4 +1,5 @@
-ME/Music
+#! /bin/bash
+dir=$HOME/Music
 
 findparms=(-name '*.mp3' -or -name '*.wav' -or -name '*.m4a')
 mpvparms=(--no-video)
