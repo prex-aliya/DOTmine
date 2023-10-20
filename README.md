@@ -1,16 +1,28 @@
 <h1 align="center" style="font-size:72px">DOT Mine</h1>
 
-This is a collection of my dot files for my system.
+This is a collection of, at one time, my dot files for my system. Now it
+is more for small programs, I edited or created, to run my
+system. This doesn't house all of them since they might prove to
+hold sensitive information.
 
 
-<h1 align="center"><a href="https://github.com/Ancurio/colorpicker">colorpicker</a></h1>
+# [colorpickekr](https://github.com/Ancurio/colorpicker)
 
-[colorpicker](https://github.com/Ancurio/colorpicker)
-
-A small tool for X11 that writes the color value on
-your screen at the cursor position to stdout, in RGB.
-
-I only edited the Makefile, to install.
+[Colorpicker](https://github.com/Ancurio/colorpicker) is a small
+tool for X11 that writes the color value on your screen at the
+cursor position to stdout, in RGB. I only edited the Makefile,
+to install.
 
 
-<h1 align="center"><a href="https://github.com/marty-oehme/bemoji">bemoji</a><br /></h1>
+# [bemoji](https://github.com/marty-oehme/bemoji)
+# [etc](./etc/)
+
+houses all the files without a place, or its place doesn't
+warrent its own file -- just yet.
+
+## [githubignore](./etc/githubignore)
+
+A simple file to put in my home directory, or any other directory I do not wish
+to have git touch at all! This is an attempt to remedy my stupidity.
+
+<!-- vim: textwidth=64

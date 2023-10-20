@@ -1,0 +1,25 @@
+# man gitignore
+#
+# This is a just in case file to make sure I dont make a 
+# mistake an accidently include this directory.
+
+# **    leading followed by slash, match all directories
+# *     matches anythnig
+**/*
+# /**   tailing matches everything inside diretory
+**/**
+
+# just in case, my directorys get about 10 deep
+# so lets make it 12.
+*
+*/*
+*/*/*
+*/*/*/*
+*/*/*/*/*
+*/*/*/*/*/*
+*/*/*/*/*/*/*
+*/*/*/*/*/*/*/*
+*/*/*/*/*/*/*/*/*
+*/*/*/*/*/*/*/*/*/*
+*/*/*/*/*/*/*/*/*/*/*
+*/*/*/*/*/*/*/*/*/*/*/*
